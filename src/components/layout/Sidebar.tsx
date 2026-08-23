@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LogOut } from "lucide-react";
 import { navItems } from "@/config/navigation";
@@ -19,10 +20,14 @@ export function Sidebar() {
       {/* Logo Area */}
       <div className={styles.logoArea}>
         <div className={styles.logoWrapper}>
-          <div className={styles.logoIcon}>
-            <span className={styles.logoIconText}>B2</span>
-          </div>
-          <span className={styles.logoText}>Buy2</span>
+          <Image
+            src="/buy2logo.png"
+            alt="Buy2 Logo"
+            width={120}
+            height={40}
+            priority
+            style={{ objectFit: "contain", width: "auto", height: "auto", maxHeight: "40px" }}
+          />
         </div>
       </div>
 

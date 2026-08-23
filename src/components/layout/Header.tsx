@@ -45,11 +45,7 @@ export function Header() {
 
   const title = getActiveTitle();
   
-  const currentConfig = pageConfigs[pathname] || (
-    pathname === "/attendance-profiles" 
-      ? pageConfigs["/attendance-profiles"] 
-      : {}
-  );
+  const currentConfig = pageConfigs[pathname] || {};
 
   return (
     <div className={styles.headerWrapper}>
