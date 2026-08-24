@@ -1,0 +1,25 @@
+.appWrapper {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+}
+
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contentArea {
+  flex: 1;
+  overflow: auto;
+  padding: var(--spacing-xl);
+}
+
+@media (max-width: 640px) {
+  .contentArea {
+    padding: var(--spacing-lg);
+  }
+}

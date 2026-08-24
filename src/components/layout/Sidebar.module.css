@@ -1,0 +1,134 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 100vh;
+  background-color: var(--color-bg-base);
+  border-right: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 var(--spacing-xl);
+  flex-shrink: 0;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIconText {
+  color: var(--color-bg-base);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.logoText {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-base);
+  letter-spacing: -0.025em;
+}
+
+.navArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  overflow-y: auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.navGroupSpacer {
+  height: var(--spacing-lg);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 10px var(--spacing-md);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all 0.15s ease-in-out;
+}
+
+.navLink:hover {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-base);
+}
+
+.navLinkActive {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.navIcon {
+  flex-shrink: 0;
+  color: var(--color-text-subtle);
+  transition: color 0.15s ease-in-out;
+}
+
+.navLink:hover .navIcon {
+  color: var(--color-text-muted);
+}
+
+.navLinkActive .navIcon {
+  color: var(--color-primary);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.logoutContainer {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+  padding: 10px var(--spacing-md);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all 0.15s ease-in-out;
+}
+
+.logoutBtn:hover {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-base);
+}
+
+.logoutBtn:hover .navIcon {
+  color: var(--color-text-muted);
+}
