@@ -1,0 +1,314 @@
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.viewAll {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.viewAll:hover {
+  opacity: 0.8;
+}
+
+/* Rewards list layout */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 0.75rem;
+  border: 1px solid #f1f5f9;
+}
+
+.brandBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.noonText {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.125rem;
+  color: #1e293b;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brandName {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.discount {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #1e3a8a; /* Blue text */
+}
+
+.pointsText {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.redeemBtn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.redeemBtn.active {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.redeemBtn.active:hover {
+  background-color: #1d4ed8;
+}
+
+.redeemBtn.disabled {
+  background-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Modal Overlay & Card styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 1.25rem;
+  width: 90%;
+  max-width: 440px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.modalSubtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.modalVoucher {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background-color: #f8fafc;
+  margin-bottom: 1.75rem;
+}
+
+.modalBrandBox {
+  width: 70px;
+  height: 70px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modalVoucherInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.modalBrandName {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.modalDiscount {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #1e3a8a;
+}
+
+.modalPointsText {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.modalActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.primaryBtn {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.primaryBtn:hover {
+  background-color: #1d4ed8;
+}
+
+.secondaryBtn {
+  background: none;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.875rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.secondaryBtn:hover {
+  background-color: #f1f5f9;
+}
+
+/* Success Vouncher popup states */
+.successActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.codeBoxContainer {
+  display: flex;
+  align-items: center;
+  border: 2px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  background-color: #eff6ff;
+  overflow: hidden;
+}
+
+.codeBox {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #1e3a8a;
+  letter-spacing: 0.05em;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 0.875rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.copyBtn:hover {
+  background-color: #1d4ed8;
+}
+
+.closePopupBtn {
+  background: none;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.875rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.closePopupBtn:hover {
+  background-color: #f1f5f9;
+}

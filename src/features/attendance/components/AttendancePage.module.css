@@ -1,0 +1,945 @@
+/* ────────── AttendancePage Layout ────────── */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: 0;
+}
+
+/* ── Header ── */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-base);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-base);
+  background: var(--color-bg-base);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dateRangeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary-border);
+  background: var(--color-primary-bg);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: all 0.2s;
+  position: relative;
+}
+
+.dateRangeBtn:hover {
+  background: var(--color-primary-border);
+}
+
+.calendarIcon {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+/* ── Stats Row ── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  background: var(--color-bg-base);
+  border-radius: var(--radius-xl);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+  min-height: 90px;
+}
+
+.statIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIconRed {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+}
+
+.statIconBlue {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.statIconGreen {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+}
+
+.statIconOrange {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-base);
+  letter-spacing: -0.5px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* ── Grid Section ── */
+.gridSection {
+  background: var(--color-bg-base);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-xl);
+}
+
+.dayGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.dayGridHideWeekends {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Day Card ── */
+.dayCard {
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--color-bg-base);
+  min-height: 200px;
+}
+
+.dayCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(42, 65, 167, 0.08);
+  transform: translateY(-1px);
+}
+
+.dayCardWeekend {
+  opacity: 0.4;
+  background: var(--color-bg-subtle);
+  cursor: default;
+}
+
+.dayCardWeekend:hover {
+  border-color: var(--color-border-base);
+  box-shadow: none;
+  transform: none;
+}
+
+.dayCardAbsent {
+  border-color: #fecaca;
+  background: #fff5f5;
+}
+
+.dayCardSelected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(42, 65, 167, 0.15);
+}
+
+/* Day card header with circle on left, status on right */
+.dayCardTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dayRingWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.dayRingSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.dayRingProgress {
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.dayRingInner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dayNumber {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-base);
+}
+
+.dayStatusBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.statusCompleted {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.statusPartial {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.statusAbsent {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.statusWeekend {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+/* DayCard Figma EXACT grid structures */
+.dayCardTopRowGrid {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.dayCardDateCircleContainer {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dayCardMonthNameMini {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-top: -2px;
+}
+
+.dayRingInner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dayNumber {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.dayCardTopRightContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badgeWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.dayCardTimesCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.dayTimeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.timeLabel {
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.timeValueGreen {
+  margin-left: auto;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.timeValueRed {
+  margin-left: auto;
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.dayEntriesBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.bottomLabelWithDot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* Day card month name subheader */
+.dayCardSubheader {
+  display: flex;
+  margin-top: -6px;
+}
+
+.dayCardMonthName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-subtle);
+}
+
+/* Day card time entries */
+.dayEntries {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.dayEntryRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.dayEntryRowSub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 11px;
+}
+
+.entryDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotGreen {
+  background: #22c55e;
+}
+
+.dotRed {
+  background: #ef4444;
+}
+
+.dotOrange {
+  background: #f59e0b;
+}
+
+.dotBlue {
+  background: #3b82f6;
+}
+
+.entryLabel {
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.entryTimeValue {
+  margin-left: auto;
+  color: var(--color-text-base);
+  font-weight: 600;
+}
+
+.daySeparator {
+  border-top: 1px dashed var(--color-border-base);
+  margin: 4px 0;
+}
+
+.entryLabelSub {
+  color: var(--color-text-subtle);
+  font-weight: 500;
+}
+
+.entryTimeValueSub {
+  color: var(--color-text-base);
+  font-weight: 600;
+}
+
+/* ── Overview Modal ── */
+.overviewBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overviewPanel {
+  background: var(--color-bg-base);
+  border-radius: 20px;
+  width: 440px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: scaleIn 0.25s ease;
+  overflow: hidden;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.overviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md) var(--spacing-xl);
+}
+
+.overviewTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-base);
+}
+
+.overviewCloseBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.15s;
+}
+
+.overviewCloseBtn:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-base);
+}
+
+.overviewBody {
+  padding: 0 var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Figma Overview Info Box */
+.figmaOverviewInfoBox {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.figmaOverviewDateRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.figmaOverviewDayNum {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.figmaOverviewDateMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.figmaOverviewMonth {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-base);
+}
+
+.figmaOverviewYear {
+  font-size: 12px;
+  color: var(--color-text-subtle);
+  margin-top: 1px;
+}
+
+.overviewBadge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badgeCompleted {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.badgePartial {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.badgeApproved {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+/* Figma timeline box */
+.figmaTimelineBox {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.figmaTimelineRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.figmaLabel {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.figmaTimeValueGreen {
+  margin-left: auto;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.figmaTimeValueRed {
+  margin-left: auto;
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* Figma details Grid */
+.figmaDetailGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 14px;
+}
+
+.figmaDetailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.figmaDetailLabel {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.figmaDetailBadgeBlue {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.figmaDetailBadgeGreen {
+  background: #fee2e2;
+  color: #ef4444;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.figmaDetailReasonText {
+  color: var(--color-text-base);
+  font-weight: 600;
+}
+
+/* Three sub cards at bottom */
+.figmaOverviewStatsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.figmaOverviewStatCard {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.figmaOverviewStatIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.figmaOverviewStatIconBlue {
+  background: #eff6ff;
+}
+
+.figmaOverviewStatIconPurple {
+  background: #faf5ff;
+}
+
+.figmaOverviewStatIconOrange {
+  background: #fff7ed;
+}
+
+.figmaOverviewStatContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.figmaOverviewStatValue {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-text-base);
+  line-height: 1.2;
+}
+
+.figmaOverviewStatLabel {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+}
+
+/* ── Date Range Filter Dropdown ── */
+.dateFilterBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.dateFilterDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--color-bg-base);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  display: flex;
+  min-width: 620px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropdownIn 0.2s ease;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dateFilterPresets {
+  width: 180px;
+  padding: var(--spacing-lg);
+  border-right: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.presetBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all 0.15s;
+  text-align: left;
+}
+
+.presetBtn:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-base);
+}
+
+.presetBtnActive {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.presetDefault {
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--color-bg-hover);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-subtle);
+}
+
+.hideWeekendsRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.hideWeekendsRow input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Calendar section */
+.dateFilterCalendars {
+  flex: 1;
+  padding: var(--spacing-xl);
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.calendarMonth {
+  flex: 1;
+}
+
+.calendarNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.calendarNavBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.15s;
+}
+
+.calendarNavBtn:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-base);
+}
+
+.calendarMonthTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-base);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendarDayHeader {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-subtle);
+  text-align: center;
+  padding: 4px;
+}
+
+.calendarDay {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all 0.15s;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.calendarDay:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-base);
+}
+
+.calendarDayEmpty {
+  cursor: default;
+}
+
+.calendarDayEmpty:hover {
+  background: transparent;
+}
+
+.calendarDayToday {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+}
+
+.calendarDayToday:hover {
+  background: var(--color-primary-hover);
+  color: white;
+}
+
+.calendarDayInRange {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  border-radius: 4px;
+}
+
+.calendarDayRangeStart,
+.calendarDayRangeEnd {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+}
+
+.calendarDayRangeStart:hover,
+.calendarDayRangeEnd:hover {
+  background: var(--color-primary-hover);
+  color: white;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dayGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .dayGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dateFilterDropdown {
+    min-width: unset;
+    flex-direction: column;
+    width: 320px;
+  }
+
+  .dateFilterPresets {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .dateFilterCalendars {
+    flex-direction: column;
+  }
+
+  .overviewPanel {
+    width: 100%;
+    max-width: 380px;
+  }
+}

@@ -1,0 +1,252 @@
+.taskCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, #f1f5f9);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.taskCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.taskCardSelected {
+  border: 1.5px dashed #EF4444 !important;
+  background-color: #fffafb;
+}
+
+.taskCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskCardBadge {
+  background: #EBF0FF;
+  color: #2A41A7;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.taskCardPriority {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-subtle, #64748b);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.taskCardPriorityHigh {
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.taskCardTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text-base, #191d23);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.taskCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border-subtle, #f1f5f9);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.taskCardDeadline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-subtle, #64748b);
+}
+
+.taskCardDeadlineIcon {
+  color: #64748b;
+}
+
+.taskCardDate {
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.taskCardAssignee {
+  display: flex;
+  align-items: center;
+}
+
+.taskCardAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.taskCardAvatarPlaceholder {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid View specific Card overrides */
+.taskCardGrid {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bottom colored status stripe border */
+.taskCardStripe--todo {
+  border-bottom: 4px solid #EF4444;
+}
+
+.taskCardStripe--in-progress {
+  border-bottom: 4px solid #F97316;
+}
+
+.taskCardStripe--completed {
+  border-bottom: 4px solid #22C55E;
+}
+
+.taskCardStripe--overdue {
+  border-bottom: 4px solid #64748b;
+}
+
+/* Options Button */
+.optionsBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-subtle, #94a3b8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.optionsBtn:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+  color: var(--color-text-base, #475569);
+}
+
+/* Status Badges */
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.statusBadge--todo {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.statusBadge--in-progress {
+  background-color: #ffedd5;
+  color: #f97316;
+}
+
+.statusBadge--completed {
+  background-color: #dcfce7;
+  color: #22c55e;
+}
+
+.statusBadge--overdue {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Meta Layout Left */
+.taskCardMetaLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.headerRightActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.optionsWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle, #e2e8f0);
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  width: 140px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdownHeader {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-subtle, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--color-border-subtle, #f1f5f9);
+  margin-bottom: 4px;
+}
+
+.dropdownItem {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-base, #475569);
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-bg-hover, #f1f5f9);
+  color: var(--color-primary-blue, #2a41a7);
+}
+
+.dropdownItemActive {
+  background-color: #f1f5f9;
+  color: var(--color-primary-blue, #2a41a7);
+  font-weight: 600;
+}
+

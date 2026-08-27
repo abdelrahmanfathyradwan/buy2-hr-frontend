@@ -1,17 +1,13 @@
 import {
   LayoutDashboard,
-  Users,
-  Briefcase,
-  Shield,
-  Gift,
-  Coins,
-  MapPin,
-  Inbox,
+  CheckSquare,
+  List,
   Clock,
-  Banknote,
-  Building2,
-  Calendar,
+  Inbox,
+  CalendarDays,
+  ShoppingBag,
   Settings,
+  HelpCircle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -24,18 +20,12 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
-  { label: "Attendance Profiles", href: "/attendance-profiles", icon: Users },
-  { label: "Employees", href: "/employees", icon: Users },
-  { label: "Job Management", href: "/job-management", icon: Briefcase },
-  { label: "Role Based", href: "/roles", icon: Shield },
-  { label: "Reward Management", href: "/rewards", icon: Gift },
-  { label: "Points Management", href: "/points", icon: Coins },
-  { label: "Site Management", href: "/sites", icon: MapPin },
-  { label: "Request Management", href: "/requests", icon: Inbox },
-  { label: "Time & Attendance", href: "/time-attendance", icon: Clock },
-  { label: "Payroll", href: "/payroll", icon: Banknote, isGroupEnd: true },
-  
-  { label: "Business Setting", href: "/business-settings", icon: Building2 },
-  { label: "Scheduling", href: "/scheduling", icon: Calendar },
+  { label: "My Tasks", href: "/tasks", icon: CheckSquare },
+  { label: "Lists", href: "/lists", icon: List },
+  { label: "Attendance", href: "/attendance", icon: Clock },
+  { label: "Requests", href: "/requests", icon: Inbox },
+  { label: "Shifts", href: "/shifts", icon: CalendarDays },
+  { label: "Store", href: "/store", icon: ShoppingBag, isGroupEnd: true },
   { label: "Settings", href: "/settings", icon: Settings },
+  { label: "Support", href: "/support", icon: HelpCircle },
 ];
