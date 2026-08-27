@@ -1,7 +1,5 @@
+import { RewardsList } from "@/features/rewards/components/RewardsList";
+
 export default function RewardsPage() {
-  return (
-    <div>
-      <h1>Rewards</h1>
-    </div>
-  );
+  return <RewardsList />;
 }

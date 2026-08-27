@@ -1,0 +1,268 @@
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.tasksHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasksTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-base, #1e293b);
+  margin: 0;
+}
+
+.addTaskBtn {
+  background-color: var(--primary-blue, #2a41a7);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addTaskBtn:hover {
+  background-color: var(--primary-hover, #1e3080);
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-subtle, #f1f5f9);
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-subtle, #94a3b8);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  outline: none;
+  font-size: 13.5px;
+  transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+  border-color: var(--primary-blue);
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-base, #475569);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.actionBtn:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-border-base, #e2e8f0);
+}
+
+.viewBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-subtle, #94a3b8);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.viewBtn:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+  color: var(--color-text-base, #475569);
+}
+
+.viewBtn--active {
+  background-color: #ebf0ff !important;
+  color: var(--primary-blue, #2a41a7) !important;
+}
+
+/* Transitions and layout container views */
+.tasksKanbanView {
+  transition: opacity 0.3s ease;
+}
+
+.tasksGridView {
+  transition: opacity 0.3s ease;
+}
+
+/* Kanban Board Columns */
+.boardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.boardColumn {
+  background: var(--color-bg-subtle, #f8fafc);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid var(--color-border-subtle, #f1f5f9);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 500px;
+}
+
+.columnHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.columnTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusDotTodo {
+  background-color: #ef4444;
+}
+
+.statusDotInProgress {
+  background-color: #f97316;
+}
+
+.statusDotCompleted {
+  background-color: #22c55e;
+}
+
+.columnTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-base, #1e293b);
+  margin: 0;
+}
+
+.columnCount {
+  background: var(--color-bg-base, #ffffff);
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  border-radius: 9999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-subtle, #64748b);
+}
+
+.columnCardList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Grid View specific containers */
+.gridViewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.statusFilterBar {
+  display: flex;
+  gap: 8px;
+  background-color: #ffffff;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border-subtle, #f1f5f9);
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.statusTab {
+  background: none;
+  border: none;
+  padding: 8px 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-subtle, #64748b);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.statusTab:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+  color: var(--color-text-base, #1e293b);
+}
+
+.statusTabActive {
+  background-color: var(--primary-blue, #2a41a7) !important;
+  color: #ffffff !important;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .boardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .boardColumn {
+    min-height: auto;
+  }
+}

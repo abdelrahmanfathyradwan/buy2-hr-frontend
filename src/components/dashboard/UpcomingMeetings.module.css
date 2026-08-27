@@ -1,0 +1,151 @@
+.card {
+  background: var(--color-bg-base);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-base);
+}
+
+.createBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: opacity 0.2s;
+}
+
+.createBtn:hover {
+  opacity: 0.8;
+}
+
+/* Carousel */
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.navBtn:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-base);
+}
+
+.cardsRow {
+  display: flex;
+  gap: var(--spacing-md);
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Meeting Card */
+.meetingCard {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+  flex: 1;
+  min-width: 0;
+}
+
+.dateBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #7c3aed;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.dateDay {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.dateMonth {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.meetingInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.meetingTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-base);
+  margin-bottom: 2px;
+}
+
+.meetingTime {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--spacing-sm);
+}
+
+.meetingMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.avatarGroup {
+  display: flex;
+  align-items: center;
+}
+
+.miniAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid white;
+}
+
+.avatarCount {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  margin-left: 6px;
+}
+
+.daysLeft {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  white-space: nowrap;
+}
