@@ -1,0 +1,220 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 320px;
+  padding: 20px;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-subtle, #f1f5f9);
+  padding-bottom: 12px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-base, #1e293b);
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-subtle, #94a3b8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.closeBtn:hover {
+  color: var(--color-text-base, #1e293b);
+}
+
+/* Date Picker */
+.datePickerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.monthHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.monthNav {
+  background: none;
+  border: none;
+  color: var(--color-text-subtle, #64748b);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.monthName {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text-base, #1e293b);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-subtle, #94a3b8);
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.emptyDay {
+  display: block;
+}
+
+.dayBtn {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-base, #334155);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.dayBtn:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+}
+
+.dayBtnActive {
+  background-color: var(--primary-blue, #2a41a7) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Time Picker */
+.timePickerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--color-border-subtle, #f1f5f9);
+  padding-top: 12px;
+}
+
+.timeLabel {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-base, #1e293b);
+}
+
+.timeInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeInput {
+  width: 48px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  text-align: center;
+  font-size: 13px;
+  outline: none;
+}
+
+.timeInput:focus {
+  border-color: var(--primary-blue);
+}
+
+.timeColon {
+  font-weight: 700;
+  color: var(--color-text-subtle, #94a3b8);
+}
+
+.amPmToggle {
+  display: flex;
+  background-color: var(--color-bg-subtle, #f8fafc);
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.amPmBtn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-subtle, #64748b);
+  cursor: pointer;
+}
+
+.amPmBtnActive {
+  background-color: var(--primary-blue, #2a41a7);
+  color: #ffffff;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--color-border-subtle, #f1f5f9);
+  padding-top: 12px;
+}
+
+.cancelBtn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-subtle, #64748b);
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.cancelBtn:hover {
+  color: var(--color-text-base, #1e293b);
+}
+
+.okBtn {
+  background-color: var(--primary-blue, #2a41a7);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.okBtn:hover {
+  background-color: var(--primary-hover, #1e3080);
+}

@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  height: 120px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.brandSection {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-weight: 800;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #1e293b;
+}
+
+/* Coupon dotted divider and punch cuts */
+.divider {
+  width: 1px;
+  border-left: 2px dashed #cbd5e1;
+  position: relative;
+  height: 100%;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #f8fafc; /* Matches grid page background */
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  left: -9px;
+  z-index: 10;
+}
+
+.divider::before {
+  top: -9px;
+}
+
+.divider::after {
+  bottom: -9px;
+}
+
+.detailsSection {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brandName {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.openIcon {
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+.card:hover .openIcon {
+  color: #2563eb;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0.25rem 0;
+  line-height: 1.3;
+}
+
+.points {
+  font-size: 0.75rem;
+  color: #2563eb;
+  font-weight: 700;
+}

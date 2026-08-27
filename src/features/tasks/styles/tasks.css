@@ -1,0 +1,93 @@
+:root {
+  /* Brand colors */
+  --primary-blue: #2A41A7;
+  --primary-hover: #1E3080;
+  --bg-app: #F8F9FD;
+
+  /* Status Colors */
+  --todo-color: #EF4444;
+  --in-progress-color: #F97316;
+  --completed-color: #22C55E;
+
+  /* Utility style constants */
+  --shadow-card: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --radius-inner: 8px;
+}
+
+/* Base BEM classes for forms and task layout components */
+.task-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.task-form-group__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-base, #1e293b);
+}
+
+.task-form-group__input,
+.task-form-group__select {
+  padding: 12px 16px;
+  border-radius: var(--radius-inner);
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  background-color: #ffffff;
+  font-size: 14px;
+  color: var(--color-text-base, #1e293b);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.task-form-group__input:focus,
+.task-form-group__select:focus {
+  border-color: var(--primary-blue);
+}
+
+.task-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-inner);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.task-btn--primary {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+.task-btn--primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.task-btn--secondary {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-base, #e2e8f0);
+  color: var(--color-text-base, #1e293b);
+}
+
+.task-btn--secondary:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+}
+
+.task-btn--danger {
+  color: #ef4444;
+  background: none;
+  padding: 6px;
+}
+
+.task-btn--danger:hover {
+  background-color: #fee2e2;
+  border-radius: 4px;
+}

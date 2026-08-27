@@ -1,0 +1,277 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.panel {
+  width: 420px;
+  max-width: 100%;
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0px 24px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-subtle, #f1f5f9);
+}
+
+.switcher {
+  display: flex;
+  background-color: #f8fafc;
+  padding: 4px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border-subtle, #e2e8f0);
+}
+
+.switchBtn {
+  background: none;
+  border: none;
+  padding: 8px 32px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-subtle, #64748b);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.switchBtnActive {
+  background-color: var(--color-primary-blue, #2a41a7);
+  color: #ffffff;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-subtle, #94a3b8);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: #f1f5f9;
+  color: var(--color-text-base, #1e293b);
+}
+
+.body {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.formGroupList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-subtle, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text, #334155);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle, #cbd5e1);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.selectInput:focus {
+  border-color: var(--color-primary-blue, #2a41a7);
+}
+
+.dateInputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text, #334155);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle, #cbd5e1);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-subtle, #94a3b8);
+  pointer-events: none;
+}
+
+/* Radio priority items styling matching screenshot */
+.radioList {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-subtle, #cbd5e1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.radioItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border-subtle, #f1f5f9);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.radioItem:last-child {
+  border-bottom: none;
+}
+
+.radioItem:hover {
+  background-color: #f8fafc;
+}
+
+.radioLabelLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.priorityIconRed { color: #ef4444; }
+.priorityIconOrange { color: #f97316; }
+.priorityIconBlue { color: #3b82f6; }
+.priorityIconGreen { color: #22c55e; }
+.priorityIconGray { color: #94a3b8; }
+.sortTypeIcon { color: var(--color-text-subtle, #64748b); }
+
+.radioText {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text, #334155);
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom circular radio dot on the right */
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.radioInput:checked ~ .customRadio {
+  border-color: var(--color-primary-blue, #2a41a7);
+  background-color: var(--color-primary-blue, #2a41a7);
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+/* Sticky Action Footer */
+.footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border-subtle, #f1f5f9);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  background-color: #ffffff;
+}
+
+.clearBtn {
+  background-color: #ebf0ff;
+  color: var(--color-primary-blue, #2a41a7);
+  border: none;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.clearBtn:hover {
+  background-color: #dbe4ff;
+}
+
+.applyBtn {
+  background-color: var(--color-primary-blue, #2a41a7);
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.applyBtn:hover {
+  background-color: var(--color-primary-hover, #1e3080);
+}
